@@ -1,0 +1,77 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+body {
+  background-color: #FEFDF9;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header nav ul {
+  display: flex;
+}
+header nav ul li {
+  list-style: none;
+  padding: 1em;
+}
+header nav ul li a {
+  text-decoration: none;
+}
+
+.hero {
+  max-width: 100%;
+}
+
+aside {
+  color: white;
+  background-color: black;
+  display: flex;
+  max-width: 25%;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.container {
+  margin: auto;
+  padding: 1.5em;
+  justify-items: center;
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.articles {
+  display: flex;
+  justify-content: center;
+}
+
+.featured {
+  max-width: 75%;
+  padding-right: 1em;
+}
+
+.BigFont {
+  font-size: 2em;
+}
+
+.orange {
+  color: orange;
+}
+
+.grey {
+  color: grey;
+}
+
+/*# sourceMappingURL=style.css.map */
