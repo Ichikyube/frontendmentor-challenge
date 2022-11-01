@@ -1,3 +1,59 @@
+a {
+  text-decoration: none;
+}
+
+.logo {
+  align-self: center;
+}
+
+p {
+  font-size: 0.75em;
+}
+
+@font-face {
+  font-family: TitleFont;
+  src: url(assets/fonts/static/Inter-ExtraBold.ttf);
+}
+.featured {
+  max-width: 65%;
+  padding-right: 1em;
+}
+.featured img {
+  max-width: 100%;
+  margin-bottom: 1.2em;
+}
+
+h1 {
+  width: 100%;
+  margin-top: 0;
+}
+
+.columns {
+  display: flex;
+}
+.columns h1 {
+  font-size: 3em;
+  font-family: TitleFont;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.columns summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.columns summary p {
+  margin-bottom: 1em;
+}
+
+.btn-primary {
+  color: white;
+  background-color: black;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -13,6 +69,10 @@ body {
 header {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 2em;
+}
+header nav {
+  margin-top: 0;
 }
 header nav ul {
   display: flex;
@@ -21,19 +81,12 @@ header nav ul li {
   list-style: none;
   padding: 1em;
 }
-header nav ul li a {
-  text-decoration: none;
-}
-
-.hero {
-  max-width: 100%;
-}
 
 aside {
   color: white;
   background-color: black;
   display: flex;
-  max-width: 25%;
+  max-width: 35%;
   flex-direction: column;
 }
 
@@ -42,24 +95,23 @@ aside {
 }
 
 .container {
-  margin: auto;
+  max-width: 80%;
+  margin-inline: auto;
   padding: 1.5em;
-  justify-items: center;
 }
 
 .container-fluid {
   display: flex;
-  justify-content: space-between;
+}
+
+.main {
+  display: flex;
+  margin-bottom: 5em;
 }
 
 .articles {
   display: flex;
   justify-content: center;
-}
-
-.featured {
-  max-width: 75%;
-  padding-right: 1em;
 }
 
 .BigFont {
