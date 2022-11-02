@@ -1,0 +1,75 @@
+header {
+  background-color: hsl(356deg, 100%, 66%);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-inline: auto;
+  padding-top: 3em;
+}
+
+.mainmenu {
+  flex: auto;
+}
+
+.mainNav {
+  display: flex;
+}
+.mainNav #dropdownNavbar ul {
+  background-color: hsl(0deg, 0%, 100%);
+  border-radius: 0.2em;
+  padding: 1em;
+  position: relative;
+  left: 3em;
+  top: 1.5em;
+  box-shadow: 4px 8px 15px 6px rgba(31, 63, 91, 0.25);
+}
+.mainNav #dropdownNavbar ul li {
+  color: hsl(0deg, 0%, 100%);
+  list-style-type: none;
+}
+.mainNav #dropdownNavbar ul li a {
+  color: hsl(240deg, 10%, 16%);
+  text-decoration: none;
+}
+
+footer {
+  background: hsl(240deg, 10%, 16%);
+}
+
+ul {
+  border-radius: 0.2em;
+  padding: 1em;
+}
+ul li {
+  color: hsl(0deg, 0%, 100%);
+  list-style-type: none;
+}
+ul li a {
+  color: hsl(0deg, 0%, 100%);
+  text-decoration: none;
+}
+
+#dropdownNavbarLink {
+  background: none;
+  border: none;
+}
+
+@font-face {
+  font-family: Overpass;
+  src: url(https://fonts.google.com/specimen/Overpass?preview.text_type=custom);
+  font-weights: 300, 600;
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url(https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom);
+  font-weight: 400, 500, 700;
+}
+.btn {
+  padding-right: 1em;
+  color: hsl(0deg, 0%, 100%);
+}
+
+/*# sourceMappingURL=style.css.map */

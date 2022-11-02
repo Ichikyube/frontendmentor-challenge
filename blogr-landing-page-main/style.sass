@@ -1,0 +1,63 @@
+$LightRed: hsl(356, 100%, 66%)
+$VeryLightRed: hsl(355, 100%, 74%)
+$VeryDarkBlue: hsl(208, 49%, 24%)
+
+$White: hsl(0, 0%, 100%)
+$GrayisBlue: hsl(240, 2%, 79%)
+$VeryDarkGrayishBlue: hsl(207, 13%, 34%)
+$VeryDarkBlackBlue: hsl(240, 10%, 16%)
+
+header
+    background-color: $LightRed
+nav
+    display: flex
+    justify-content: space-between
+    width: 80%
+    margin-inline: auto
+    padding-top: 3em
+.mainmenu
+    flex: auto
+.mainNav
+    display: flex
+    #dropdownNavbar 
+        ul
+            background-color: $White
+            
+            border-radius: 0.2em
+            padding: 1em
+            position: relative
+            left: 3em
+            top: 1.5em
+            box-shadow: 4px 8px 15px 6px rgb($VeryDarkBlue, 0.25)
+            li
+                color: $White
+                list-style-type: none
+                a
+                    color: $VeryDarkBlackBlue
+                    text-decoration: none
+footer
+    background: $VeryDarkBlackBlue
+ul  
+    border-radius: 0.2em
+    padding: 1em
+    li
+        color: $White
+        list-style-type: none
+        a
+            color: $White
+            text-decoration: none    
+#dropdownNavbarLink
+    background: none
+    border: none
+@font-face 
+    font-family: Overpass
+    src: url(https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+    font-weights: 300, 600
+
+@font-face 
+    font-family: Ubuntu
+    src: url(https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+    font-weight:  400, 500, 700
+.btn
+    padding-right: 1em
+    color: $White
