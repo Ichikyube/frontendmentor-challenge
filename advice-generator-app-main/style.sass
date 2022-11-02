@@ -1,0 +1,85 @@
+// Front-end Style Guide
+
+/* Layout
+$Mobile: 375px
+$Desktop: 1440px
+
+/* Colors
+// Primary
+$LightCyan: hsl(193, 38%, 86%)
+$NeonGreen: hsl(150, 100%, 66%)
+// Neutral
+$GrayishBlue: hsl(217, 19%, 38%)
+$DarkGrayishBlue: hsl(217, 19%, 24%)
+$DarkBlue: hsl(218, 23%, 16%)
+
+/* Typography
+// Body Copy
+$FontSize: 28px
+// Font
+@font-face 
+    // This is parsed as a normal function call that takes a quoted string.
+    src: url(https://fonts.google.com/specimen/Manrope)
+    font-family: "Manrope"
+    font-weight: 800
+
+body
+    background: $DarkBlue
+
+.card
+    $max: calc(100 / 3)
+    position: fixed
+    top: 50vh - calc($max/2)
+    left: 50vw - calc($max/2)
+    color: $LightCyan
+    background: $DarkGrayishBlue
+    max-width: $max *1vw
+    border-radius: 10px
+    margin-inline: auto
+    text-align: center
+    box-shadow: 5px 5px 1em 3px rgba(0, 0, 0, 0.25)
+    .card-title
+        color: $NeonGreen
+    .card-body
+        img
+            width: 100%
+    div
+        padding: 1em
+    hr
+        margin: 2em
+        height: 1px
+        overflow: visible
+        padding: 0
+        border: none
+        border-top: 1px solid $GrayishBlue
+        text-align: center
+        &:after 
+            content: " | | "
+            display: inline-block
+            position: relative
+            top: -0.7em
+            font-size: 1.5em
+            padding: 0 0.25em
+            font-family: cursive
+            font-weight: bolder
+            font-size: large
+            -webkit-text-stroke: white
+            -webkit-text-stroke-width: thick
+            background: $DarkGrayishBlue
+
+.circle
+    $radius: 2.5%
+    background: $NeonGreen
+    width: $radius
+    height: $radius
+    border-radius: 50%
+    bottom: -2em
+    display: inline-flex
+    position: relative
+    box-shadow: 0 0 2em $NeonGreen
+    &:after
+        content: url('images/icon-dice.svg')
+        position: absolute
+        top: 0.25em
+        left: 0.45em
+        right: .45em

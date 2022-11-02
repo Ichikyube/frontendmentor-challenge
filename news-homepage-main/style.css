@@ -14,6 +14,25 @@ p {
   font-family: TitleFont;
   src: url(assets/fonts/static/Inter-ExtraBold.ttf);
 }
+.card {
+  display: flex;
+  margin: 1em;
+}
+.card img {
+  width: 5em;
+  height: fit-content;
+}
+.card summary {
+  width: 50%;
+  margin-left: 1em;
+  display: flex;
+  flex-direction: column;
+}
+.card summary h1, .card summary h3, .card summary p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
 .featured {
   max-width: 65%;
   padding-right: 1em;
