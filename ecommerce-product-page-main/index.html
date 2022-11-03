@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | E-commerce product page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="relative bg-white w-11/12 mx-auto mb-6">
+    <nav aria-label="Top" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="border-b border-gray-200">
+        <div class="flex h-16 items-center">
+          <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
+          <button type="button" class="rounded-md bg-white p-2 text-gray-400 lg:hidden">
+            <span class="sr-only">Open menu</span>
+            <!-- Heroicon name: outline/bars-3 -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+
+          <!-- Logo -->
+          <div class="ml-4 mr-6 flex lg:ml-0">
+            <a href="#">
+              <span class="sr-only">Sneaker</span>
+              <img src="images/logo.svg" alt="">
+            </a>
+          </div>
+
+          <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+              <ul
+                class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                  <a href="#"
+                    class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                    aria-current="page">Collection</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Men</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Women</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                </li>
+                <li>
+                  <a href="#"
+                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- Cart -->
+          <div class="mr-4 flow-root lg:mr-6">
+            <a href="#" class="group -m-2 flex items-center p-2">
+              <img src="images/icon-cart.svg" alt="" srcset="">
+              <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">0</span>
+              <span class="sr-only">items in cart, view basket</span>
+            </a>
+          </div>
+
+          <div class="ml-auto flex items-center">
+            <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+              <img class="w-12" src="images/image-avatar.png" alt="" srcset="">
+              <div hidden><a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Sign in</a>
+                <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                <a href="#" class="text-sm font-medium text-gray-700 hover:text-gray-800">Create account</a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="w-10/12 mx-auto">
+    <div class="bg-white">
+      <div class="flex pt-6">
+        <!-- Image gallery -->
+        <div class="mx-auto mt-6 max-w-2xl">
+          <div class="aspect-w-3 aspect-h-4 hidden overflow-hidden rounded-lg lg:block">
+            <img src="images/image-product-1.jpg" alt="Two each of gray, white, and black shirts laying flat."
+              class="h-full w-full object-cover object-center">
+          </div>
+          <div class="hidden lg:grid lg:grid-cols-4 lg:gap-y-8">
+            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg m-3">
+              <img src="images/image-product-1-thumbnail.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
+            </div>
+            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg m-3">
+              <img src="images/image-product-2-thumbnail.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
+            </div>
+            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg m-3">
+              <img src="images/image-product-3-thumbnail.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
+            </div>
+            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg m-3">
+              <img src="images/image-product-4-thumbnail.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
+            </div>
+          </div>
+        </div>
+
+        <!-- Product info -->
+        <div class="mx-auto ml-16 max-w-2xl px-4 pt-10 pb-16 sm:px-6 lg:px-8 lg:pt-16 lg:pb-24">
+          <h6>Sneaker Company</h6>
+          <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Fall Limited Edition Sneakers</h1>
+
+          <div class="py-10 lg:col-span-2 lg:col-start-1 lg:pt-6 lg:pb-16 lg:pr-8">
+            <!-- Description and details -->
+            <div>
+              <h3 class="sr-only">Description</h3>
+
+              <div class="space-y-6">
+                <p class="text-base text-gray-900">These low-profile sneakers are your perfect casual wear companion.
+                  Featuring a
+                  durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+              </div>
+            </div>
+
+            <!-- Options -->
+            <div class="mt-4 lg:row-span-3 lg:mt-0">
+              <h2 class="sr-only">Product information</h2>
+              <p class="text-3xl tracking-tight text-gray-900">
+                $125.00
+                50%
+              </p>
+              <br />
+              <p>$250.00</p>
+              <form class="flex mt-10">
+                <div> 0</div>
+                <button type="submit"
+                  class="items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                  Add to cart</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Valentino Alam</a>.
+  </div>
+</body>
+
+</html>

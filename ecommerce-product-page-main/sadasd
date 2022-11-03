@@ -1,0 +1,77 @@
+
+  <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+
+  <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    theme: {
+      extend: {
+        gridTemplateRows: {
+          '[auto,auto,1fr]': 'auto auto 1fr',
+        },
+      },
+    },
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+
+<!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/aspect-ratio'),
+    ],
+  }
+  ```
+-->
+<div class="hidden lg:grid lg:grid-cols-1 lg:gap-y-8">
+          <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+            <img src="images/image-product-1-thumbnail.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
+          </div>
+          <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg">
+            <img src="images/image-product-2-thumbnail.jpg" alt="Model wearing plain gray basic tee." class="h-full w-full object-cover object-center">
+          </div>
+        </div>
+        <div class="aspect-w-4 aspect-h-5 sm:overflow-hidden sm:rounded-lg lg:aspect-w-3 lg:aspect-h-4">
+          <img src="images/image-product-2.jpg" alt="Model wearing plain white basic tee." class="h-full w-full object-cover object-center">
+        </div>
