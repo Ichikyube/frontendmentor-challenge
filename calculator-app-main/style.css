@@ -1,0 +1,14 @@
+/* Theme 2 */
+/* Theme 3 */
+/* Body Copy */
+/* Font */
+@font-face {
+  font-family: "League Spartan";
+  src: url(https://fonts.google.com/specimen/League+Spartan);
+  font-weight: 700;
+}
+body {
+  background-color: hsl(222deg, 26%, 31%);
+}
+
+/*# sourceMappingURL=style.css.map */
