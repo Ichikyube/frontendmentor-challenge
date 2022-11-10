@@ -5,11 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-
   <title>Frontend Mentor | E-commerce product page</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
@@ -53,24 +51,24 @@
                 class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 <li>
                   <a href="#"
-                    class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                    class="pb-5 mt-4 py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                     aria-current="page">Collection</a>
                 </li>
                 <li>
                   <a href="#"
-                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Men</a>
+                    class="pb-5 mt-4 py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Men</a>
                 </li>
                 <li>
                   <a href="#"
-                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Women</a>
+                    class="pb-5 mt-4 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-myOrange border-b-4">Women</a>
                 </li>
                 <li>
                   <a href="#"
-                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                    class="pb-5 mt-4 py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
                 </li>
                 <li>
                   <a href="#"
-                    class="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                    class="pb-5 mt-4 py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
                 </li>
               </ul>
             </div>
@@ -109,7 +107,7 @@
               class="h-full w-full object-cover object-center">
           </div>
           <div class="hidden lg:grid lg:grid-cols-4 lg:gap-y-8">
-            <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg m-3">
+            <div class="aspect-w-3 border border-myOrange aspect-h-2 overflow-hidden rounded-lg m-3">
               <img src="images/image-product-1-thumbnail.jpg" alt="Model wearing plain black basic tee." class="h-full w-full object-cover object-center">
             </div>
             <div class="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg m-3">
@@ -146,15 +144,19 @@
               <h2 class="sr-only">Product information</h2>
               <p class="text-3xl tracking-tight text-gray-900">
                 $125.00
-                50%
+                <span class="text-myOrange bg-myPaleOrange rounded-lg px-3 text-lg align-top">50%</span>
               </p>
               <br />
-              <p>$250.00</p>
+              <p><span class="line-through text-myDarkGrayishBlue">$250.00</span></p>
               <form class="flex mt-10">
-                <div> 0</div>
+                <div class="grid grid-cols-3 items-center">
+                  <div class="decrement font-black  text-myOrange rounded-md bg-myLightGrayishBlue w-9 h-full flex items-center justify-center">-</div>
+                  <div id="countOrder" class="bg-myLightGrayishBlue font-black  text-center flex align-middle items-center justify-center rounded-md w-9 h-full"> 0</div>
+                  <div class="increment font-black text-myOrange rounded-md bg-myLightGrayishBlue w-9 h-full flex items-center justify-center">+</div>
+                </div>
                 <button type="submit"
-                  class="items-center justify-center rounded-md border border-transparent bg-indigo-600 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                  Add to cart</button>
+                  class="flex justify-evenly items-center lg:px-16 rounded-md border border-transparent bg-myOrange basis-64 ml-3 py-3 px-8 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
+                  <img src="images/icon-cart.svg" alt="">Add to cart</button>
               </form>
             </div>
           </div>

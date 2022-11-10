@@ -18,7 +18,7 @@ module.exports = {
       backgroundImage: {
         'intro-desktop': "url('/images/bg-intro-desktop.svg')",
         'intro-mobile': "url('/img/bg-intro-mobile.png')"
-      }
+      },
     },
   },
   plugins: [],

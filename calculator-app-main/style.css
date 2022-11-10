@@ -1,14 +1,219 @@
-/* Theme 2 */
-/* Theme 3 */
+/*
+ * Implementation of themes
+ */
 /* Body Copy */
-/* Font */
 @font-face {
   font-family: "League Spartan";
-  src: url(https://fonts.google.com/specimen/League+Spartan);
+  font-style: normal;
   font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/leaguespartan/v6/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvMGYPZA81d.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 body {
+  font-family: "League Spartan";
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+#page {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.theme-dark #page {
   background-color: hsl(222deg, 26%, 31%);
+}
+.theme-light #page {
+  background-color: hsl(0deg, 0%, 90%);
+}
+.theme-purple #page {
+  background-color: hsl(268deg, 75%, 9%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  width: 15em;
+  margin-top: 5em;
+}
+
+.topbar {
+  position: relative;
+}
+
+.toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.row {
+  display: flex;
+}
+
+.lvl {
+  display: flex;
+  justify-content: right;
+}
+
+.lvlbar {
+  width: 2em;
+  height: 1em;
+  display: inline-flex;
+  border-radius: 1em;
+  margin-left: 0.5em;
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+}
+.theme-dark .lvlbar {
+  background: hsl(224deg, 36%, 15%);
+}
+.theme-light .lvlbar {
+  background: hsl(0deg, 0%, 93%);
+}
+.theme-purple .lvlbar {
+  background: hsl(268deg, 71%, 12%);
+}
+
+.circle {
+  margin: 0;
+  padding: 0;
+  height: 1em;
+  width: 0.7em;
+  align-self: center;
+}
+
+input[type=radio] {
+  opacity: 0;
+}
+input[type=radio]:checked {
+  opacity: 1;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  mix-blend-mode: color;
+  cursor: pointer; /* Cursor on hover */
+}
+.theme-dark input[type=radio]:checked {
+  accent-color: hsl(6deg, 63%, 50%);
+}
+.theme-light input[type=radio]:checked {
+  accent-color: hsl(25deg, 98%, 40%);
+}
+.theme-purple input[type=radio]:checked {
+  accent-color: hsl(176deg, 100%, 44%);
+}
+
+#screen {
+  width: 100%;
+  height: 4em;
+  margin-bottom: 0.5em;
+  border-radius: 0.25em;
+  position: relative;
+  overflow: auto;
+}
+.theme-dark #screen {
+  background-color: hsl(224deg, 36%, 15%);
+}
+.theme-light #screen {
+  background-color: hsl(0deg, 0%, 93%);
+}
+.theme-purple #screen {
+  background-color: hsl(268deg, 71%, 12%);
+}
+.theme-dark #screen {
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-light #screen {
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-purple #screen {
+  color: hsl(0deg, 0%, 100%);
+}
+
+#result {
+  position: absolute;
+  font-size: 3em;
+  top: 0.3em;
+  right: 0.5em;
+  resize: both;
+  overflow: auto;
+}
+
+.keypad {
+  border-radius: 0.25em;
+}
+.theme-dark .keypad {
+  background-color: hsl(224deg, 36%, 15%);
+}
+.theme-light .keypad {
+  background-color: hsl(0deg, 0%, 93%);
+}
+.theme-purple .keypad {
+  background-color: hsl(268deg, 71%, 12%);
+}
+
+.rowkey {
+  display: flex;
+  justify-content: space-around;
+}
+.theme-dark .rowkey {
+  color: hsl(221deg, 14%, 31%);
+}
+.rowkey .colkey {
+  border-bottom-width: 0.2em;
+  margin: 1em;
+  width: 3em;
+  height: 2em;
+  border-radius: 0.25em;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.theme-dark .rowkey .colkey {
+  background-color: hsl(225deg, 21%, 49%);
+  border-bottom-color: hsl(224deg, 28%, 35%);
+}
+.theme-light .rowkey .colkey {
+  background-color: hsl(185deg, 42%, 37%);
+  border-bottom-color: hsl(185deg, 58%, 25%);
+}
+.theme-purple .rowkey .colkey {
+  background-color: hsl(281deg, 89%, 26%);
+  border-bottom-color: hsl(285deg, 91%, 52%);
+}
+.rowkey .reset, .rowkey .equal {
+  width: 40%;
+  text-align: center;
+  margin: 0.5em;
+  padding: 0.5em 0 0.5em 0;
+  border-radius: 0.25em;
+}
+.theme-dark .rowkey .reset, .theme-dark .rowkey .equal {
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-light .rowkey .reset, .theme-light .rowkey .equal {
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-purple .rowkey .reset, .theme-purple .rowkey .equal {
+  color: hsl(0deg, 0%, 100%);
+}
+.theme-dark .rowkey .reset {
+  background-color: hsl(224deg, 51%, 76%);
+}
+.theme-dark .rowkey .equal {
+  background-color: hsl(6deg, 63%, 50%);
+}
+.theme-light .rowkey .equal {
+  background-color: hsl(25deg, 98%, 40%);
+}
+.theme-purple .rowkey .equal {
+  background-color: hsl(176deg, 100%, 44%);
 }
 
 /*# sourceMappingURL=style.css.map */

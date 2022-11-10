@@ -1,82 +1,191 @@
-$DarkMainBackground: hsl(222, 26%, 31%)
-$DarkToggleKeyBackground: hsl(223, 31%, 20%)
-$DarkScreenBackground: hsl(224, 36%, 15%)
+$themes: (
+    Dark: (
+        MainBackground: hsl(222, 26%, 31%),
+        ToggleKeyBackground: hsl(223, 31%, 20%),
+        ScreenBackground: hsl(224, 36%, 15%),
+        // Keys
+        RstBackground: hsl(224, 51%, 76%),
+        KeyBackground: hsl(225, 21%, 49%),
+        KeyShadow: hsl(224, 28%, 35%),
+        KeyBackgroundToggle: hsl(6, 63%, 50%),
+        KeyShadow: hsl(6, 70%, 34%),
+        KeyBackground: hsl(30, 25%, 89%),
+        KeyShadow: hsl(28, 16%, 65%),
+        // Text
+        TextBlue: hsl(221, 14%, 31%),
+        TextWhite: hsl(0, 0%, 100%)
+    ),
+    light: (
+        // Backgrounds
+        MainBackground: hsl(0, 0%, 90%),
+        ToggleKeypadBackground: hsl(0, 5%, 81%),
+        ScreenBackground: hsl(0, 0%, 93%),
+        // Keys
+        KeyBackground: hsl(185, 42%, 37%),
+        KeyShadow: hsl(185, 58%, 25%),
+        KeyBackgroundToggle: hsl(25, 98%, 40%),
+        DarkKeyShadowToggle: hsl(25, 99%, 27%),
+        KeyBackground: hsl(45, 7%, 89%),
+        KeyShadow: hsl(35, 11%, 61%),
+        // Text
+        TextYellow: hsl(60, 10%, 19%),
+        TextWhite: hsl(0, 0%, 100%)
+    ),
+    purple: (
+        // Backgrounds
+        MainBackground: hsl(268, 75%, 9%),
+        ToggleKeypadBackground: hsl(268, 71%, 12%),
+        // Keys
+        KeyBackground: hsl(281, 89%, 26%),
+        KeyShadow: hsl(285, 91%, 52%),
+        KeyBackgroundToggle: hsl(176, 100%, 44%),
+        DarkKeyShadowToggle: hsl(177, 92%, 70%),
+        KeyBackground: hsl(268, 47%, 21%),
+        KeyShadow: hsl(290, 70%, 36%),
+        // Text
+        TextLight: hsl(52, 100%, 62%),
+        TextVerydark: hsl(198, 20%, 13%),
+        TextWhite: hsl(0, 0%, 100%)
+    )
+)
+    
+    
+@mixin themify( $themes: $themes ) 
 
-// Keys
+    .theme-#{$theme} & 
+      $theme-map: () !global
+      @each $key, $submap in $map 
+        $value: map-get(map-get($themes, $theme), '#{$key}')
+        $theme-map: map-merge($theme-map, ($key: $value)) !global
+      
 
-$DarkKeyBackground: hsl(225, 21%, 49%)
-$DarkKeyShadow: hsl(224, 28%, 35%)
+      @content;
+      $theme-map: null !global
 
-$DarkKeyBackgroundToggle: hsl(6, 63%, 50%)
-$DarkKeyShadow: hsl(6, 70%, 34%)
 
-$DarkKeyBackground: hsl(30, 25%, 89%)
-$DarkKeyShadow: hsl(28, 16%, 65%)
+@function themed( $key ) 
+  @return map-get( $theme-map, $key )
 
-// Text
-
-$DarkTextBlue: hsl(221, 14%, 31%)
-$DarkTextWhite: hsl(0, 0%, 100%)
-
-/* Theme 2
-
-// Backgrounds
-
-$MainBackground: hsl(0, 0%, 90%)
-$ToggleKeypadBackground: hsl(0, 5%, 81%)
-$ScreenBackground: hsl(0, 0%, 93%)
-
-// Keys
-
-$KeyBackground: hsl(185, 42%, 37%)
-$KeyShadow: hsl(185, 58%, 25%)
-
-$KeyBackgroundToggle: hsl(25, 98%, 40%)
-$DarkKeyShadowToggle: hsl(25, 99%, 27%)
-
-$KeyBackground: hsl(45, 7%, 89%)
-$KeyShadow: hsl(35, 11%, 61%)
-
-// Text
-
-$TextYellow: hsl(60, 10%, 19%)
-$TextWhite: hsl(0, 0%, 100%)
-
-/* Theme 3
-
-// Backgrounds
-
-$PMainBackground: hsl(268, 75%, 9%)
-$PToggleKeypadBackground: hsl(268, 71%, 12%)
-
-// Keys
-
-$PKeyBackground: hsl(281, 89%, 26%)
-$PKeyShadow: hsl(285, 91%, 52%)
-
-$PKeyBackgroundToggle: hsl(176, 100%, 44%)
-$PDarkKeyShadowToggle: hsl(177, 92%, 70%)
-
-$PKeyBackground: hsl(268, 47%, 21%)
-$PKeyShadow: hsl(290, 70%, 36%)
-
-// Text
-
-$PTextLight: hsl(52, 100%, 62%)
-$PTextVerydark: hsl(198, 20%, 13%)
-$PTextWhite: hsl(0, 0%, 100%)
 
 // Typography
-
 /* Body Copy
-
 $NumbersFontSize: 32px
 
 /* Font
-@font-face
-    font-family: 'League Spartan'
-    src: url(https://fonts.google.com/specimen/League+Spartan)
-    font-weight: 700
+@font-face 
+  font-family: 'League Spartan'
+  font-style: normal
+  font-weight: 700
+  font-display: swap
+  src: url(https://fonts.gstatic.com/s/leaguespartan/v6/kJEnBuEW6A0lliaV_m88ja5Twtx8BWhtkDVmjZvMGYPZA81d.woff2) format('woff2')
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+
 
 body
-    background-color: $DarkMainBackground
+    @include themify($themes)
+        background-color: theme('MainBackground')
+    font-family: 'League Spartan'
+    text-transform: uppercase
+    font-weight: bolder
+    
+.container
+    display: flex
+    flex-direction: column
+    margin-inline: auto
+    width: 15em
+    margin-top: 5em
+.topbar
+    position: relative
+.toggle
+    position: absolute
+    right: 0
+    top: 0
+.row
+    display: flex
+.lvl
+    display: flex
+    justify-content: right
+.lvlbar
+    width: 2em
+    height: 1em
+    display: inline-flex
+    border-radius: 1em
+    @include themify($themes)
+        background: themed('ScreenBackground')
+    margin-left: 0.5em
+    -webkit-transition: .2s /* 0.2 seconds transition on hover */
+    transition: opacity .2s
+.circle
+    margin: 0
+    padding: 0
+    height: 1em
+    width: 0.7em
+    align-self: center
+input[type=radio]
+    opacity: 0
+    &:checked
+        opacity: 1
+        width: 1em
+        height: 1em
+        border-radius: 1em
+        @include themify 
+            accent-color: themed('KeyBackgroundToggle')
+        mix-blend-mode: color
+        cursor: pointer /* Cursor on hover */
+
+
+#screen
+    width: 100%
+    height: 4em
+    @include themify($themes) 
+        background-color: themed('ScreenBackground')
+    margin-bottom: 0.5em
+    border-radius: 0.25em
+    @include themify($themes)
+        color: themed('TextWhite')
+    position: relative
+    overflow: auto
+#result
+    position: absolute
+    font-size: 3em
+    top: 0.3em
+    right: 0.5em
+    resize: both
+    overflow: auto
+.keypad
+    @include themify($themes)
+        background-color: themed('ScreenBackground')
+    border-radius: 0.25em
+    
+.rowkey
+    @include themify($themes)
+        color: themed('TextBlue')
+    display: flex
+    justify-content: space-around
+    .colkey
+        @include themify($themes)
+            background-color: themed('KeyBackground')
+            border-bottom-color: themed('KeyShadow')
+        border-bottom-width: 0.2em
+        margin: 1em
+        width: 3em
+        height: 2em
+        border-radius: 0.25em
+        font-weight: bolder
+        display: flex
+        justify-content: center
+        align-items: center
+    .reset, .equal
+        width: 40%
+        @include themify($themes)
+            color: themed('TextWhite')
+        text-align: center
+        margin: 0.5em
+        padding:  0.5em 0  0.5em 0
+        border-radius: 0.25em
+    .reset
+        @include themify($themes)
+            background-color: themed('RstBackground')
+    .equal
+        @include themify($themes)
+            background-color: themed('KeyBackgroundToggle')
